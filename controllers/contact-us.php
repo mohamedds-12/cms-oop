@@ -4,7 +4,7 @@ class ContactController extends Controller {
 
     
     function runBeforeAction(){
-        // echo 'Ran before the action';
+        // echo 'runs before the action';
         return true;
     }
 

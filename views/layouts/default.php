@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>About us</title>
+        <title><?php echo $title ?></title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="includes/assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -37,14 +37,15 @@
                 </div>
             </div>
         </nav>
-        <!-- Page content-->
-        <div class="container">
-            <div class="text-center mt-5">
-                <h1>Thank you your submission</h1>
-                <p class="lead">We will respond in 3 business</p>
-                <p>Bootstrap v5.1.3</p>
-            </div>
-        </div>
+        <!-- Page content-->      
+
+            <?php 
+            
+            // including the template
+            include VIEW_PATH . $template . '.html'; 
+            
+            ?>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

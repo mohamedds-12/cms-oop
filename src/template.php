@@ -2,8 +2,15 @@
 
 class Template {
 
-    function view($template){
+    protected $layout;
 
-        include 'views/' . $template . '.html';
+    function __construct($layout){
+        $this->layout = $layout;
+    }
+
+    function renderView($template, $pageComponents){
+        extract($pageComponents);
+        // including the layout
+        include VIEW_PATH . "layouts/" . $this->layout . ".php";
     }
 }

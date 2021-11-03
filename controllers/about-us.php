@@ -2,9 +2,26 @@
 
 
 class AboutController extends Controller {
+    function runBeforeAction(){
+        global $dbConnection;
+        // connecting to database
+        $dbh = DBConnection::getInstance();
+        $dbConnection = $dbh->getConnection();
+    }
 
     function defaultAction() {
-        include 'views/about-us.html';
+        global $dbConnection;
+        // getting data
+        $aboutUs = new Page($dbConnection);
+        $aboutUs->getById(4);
+        // fetching data
+        $pageComponents['title'] = $aboutUs->title;
+        $pageComponents['content'] = $aboutUs->content;
+        // assinging layout and data 
+        $aboutUs_templ = new Template('default');
+        $aboutUs_templ->renderView('static-page', $pageComponents);
+                       
     }
+    
     
 }

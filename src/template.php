@@ -8,9 +8,10 @@ class Template {
         $this->layout = $layout;
     }
 
-    function renderView($template, $pageComponents){
-        extract($pageComponents);
+    function renderView($template, $pageData){
+        extract($pageData);
+
         // including the layout
-        include VIEW_PATH . "layouts/" . $this->layout . ".php";
+        include ROOT_PATH . "views/layouts/" . $this->layout . ".php";
     }
 }

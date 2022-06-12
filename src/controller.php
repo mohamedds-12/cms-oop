@@ -13,7 +13,7 @@ class Controller {
         if(method_exists($this, $actionName)) {
             $this->$actionName();
         } else {
-            include VIEW_PATH . 'not-found.html';
+            include ROOT_PATH . 'views/not-found.html';
         }
     }
 }

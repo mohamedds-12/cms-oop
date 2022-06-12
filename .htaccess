@@ -1,0 +1,46 @@
+# Turn Rewrite Engine On
+RewriteEngine on
+
+# NC makes the rule non case sensitive
+# L makes this the last rule that this specific condition will match
+# $ in the regular expression makes the matching stop so that "customblah" will not work
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Rewrite for user.php?u=xxxxx
+RewriteRule ([0-9a-zA-Z_-]+)$ index.php?section=$1 [NC,L]
+
+# Rewrite for article.php?id=1&title=Title-Goes-Here
+# RewriteRule ^article/([0-9]+)/([0-9a-zA-Z_-]+)$ article.php?id=$1&title=$2 [NC,L]
+
+
+
+
+
+
+
+
+# RewriteEngine on
+# RewriteBase /
+
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^section/([0-9a-zA-Z_-]+)$  index.php?section=$1  [NC,L]
+# RewriteRule ^s/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)$  index.php?section=$1&action=$2  [NC,L]
+
+
+# Rewrite for projects.php
+# RewriteRule ^custom$ projects.php [NC,L]
+
+# NC makes the rule non case sensitive
+# L makes this the last rule that this specific condition will match
+# $ in the regular expression makes the matching stop so that "customblah" will not work
+
+# Rewrite for user.php?u=xxxxx
+# RewriteRule ^user/([0-9a-zA-Z]+)$ user.php?u=$1 [NC,L]
+
+# Rewrite for article.php?id=1&title=Title-Goes-Here
+# RewriteRule ^article/([0-9]+)/([0-9a-zA-Z_-]+)$ article.php?id=$1&title=$2 [NC,L]
+# RewriteCond %{REQUEST_URI} !^/.*
+# RewriteCond %{REQUEST_URI} !^/.*

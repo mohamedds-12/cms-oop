@@ -21,7 +21,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="<?php ROOT_PATH ?>?section=home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php?section=about">About us</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php?section=contact">Contact us</a></li>
                         <li class="nav-item dropdown">
@@ -42,7 +42,7 @@
             <?php 
             
             // including the template
-            include VIEW_PATH . $template . '.html'; 
+            include ROOT_PATH . "views/$template.html"; 
             
             ?>
 

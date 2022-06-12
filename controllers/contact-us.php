@@ -2,7 +2,6 @@
 
 class ContactController extends Controller {
 
-    
     function runBeforeAction(){
         global $dbConnection;
         // connecting to database
@@ -16,11 +15,11 @@ class ContactController extends Controller {
         $contactUs = new Page($dbConnection);
         $contactUs->getById(2);
         // fetching data
-        $pageComponents['title'] = $contactUs->title;
-        $pageComponents['content'] = $contactUs->content;
+        $pageData['title'] = $contactUs->page_title;
+        $pageData['content'] = $contactUs->page_content;
         // assinging layout and data 
         $contactUs_templ = new Template('default');
-        $contactUs_templ->renderView('contact-us', $pageComponents);
+        $contactUs_templ->renderView('contact-us', $pageData);
 
     }
 
@@ -30,11 +29,11 @@ class ContactController extends Controller {
         $thankyouPage = new Page($dbConnection);
         $thankyouPage->getById(3);
         // fetching data
-        $pageComponents['title'] = $thankyouPage->title;
-        $pageComponents['content'] = $thankyouPage->content;
+        $pageData['title'] = $thankyouPage->page_title;
+        $pageData['content'] = $thankyouPage->page_content;
         // assinging layout and data 
         $thankyouPage_templ = new Template('default');
-        $thankyouPage_templ->renderView('static-page', $pageComponents);
+        $thankyouPage_templ->renderView('static-page', $pageData);
 
     }
 

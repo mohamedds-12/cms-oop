@@ -14,11 +14,11 @@ class HomeController extends Controller {
         $homePage = new Page($dbConnection);
         $homePage->getById(1);
         // fetching data
-        $pageComponents['title'] = $homePage->title;
-        $pageComponents['content'] = $homePage->content;
+        $pageData['title'] = $homePage->page_title;
+        $pageData['content'] = $homePage->page_content;
         // assinging layout and data 
         $homePage_templ = new Template('default');
-        $homePage_templ->renderView('static-page', $pageComponents);
+        $homePage_templ->renderView('static-page', $pageData);
                        
     }
     

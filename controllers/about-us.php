@@ -15,11 +15,11 @@ class AboutController extends Controller {
         $aboutUs = new Page($dbConnection);
         $aboutUs->getById(4);
         // fetching data
-        $pageComponents['title'] = $aboutUs->title;
-        $pageComponents['content'] = $aboutUs->content;
+        $pageData['title'] = $aboutUs->page_title;
+        $pageData['content'] = $aboutUs->page_content;
         // assinging layout and data 
         $aboutUs_templ = new Template('default');
-        $aboutUs_templ->renderView('static-page', $pageComponents);
+        $aboutUs_templ->renderView('static-page', $pageData);
                        
     }
     
